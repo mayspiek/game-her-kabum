@@ -1,5 +1,3 @@
-
-
 enum StatusCode {
     OK = 200,
     Created = 201,
@@ -11,8 +9,8 @@ enum StatusCode {
 }
 
 export interface HttpResponse<T> {
-    body: T,
     statusCode: StatusCode;
+    body?: T;
 }
 
 export interface HttpRequest<T> {

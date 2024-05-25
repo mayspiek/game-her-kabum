@@ -2,20 +2,32 @@ import axios, { AxiosInstance } from "axios";
 import { HttpRequest, HttpResponse, IHttpClient } from "./IHttpClient";
 
 export class AxiosHttpClient implements IHttpClient {
-    private axiosInstance : AxiosInstance;
+    private axiosInstance: AxiosInstance;
 
-    constructor () {
+    constructor() {
         this.axiosInstance = axios.create({
-            baseURL: 'http://localhost:8080',
-            
+            baseURL: 'http://159.203.106.163:8080',
+
         });
     }
 
-    get<T>(url: HttpRequest<T>): Promise<HttpResponse<T>> {
-        throw new Error("Method not implemented.");
+    async get<T>({ url }: HttpRequest<T>): Promise<HttpResponse<T>> {
+        return await this.axiosInstance.get<T>(url)
+            .then(response => {
+                return {
+                    statusCode: response.status,
+                    body: response.data
+                };
+            });
     }
-    post<T>({ url, body }: HttpRequest<T>): Promise<HttpResponse<T>> {
-        throw new Error("Method not implemented.");
+    async post<T>({ url, body }: HttpRequest<T>): Promise<HttpResponse<T>> {
+        return await this.axiosInstance.post<T>(url, body)
+            .then(response => {
+                return {
+                    statusCode: response.status,
+                    body: response.data
+                };
+            });
     }
 
 }
