@@ -1,20 +1,28 @@
+import { useEffect, useState } from 'react';
 import './App.css';
+import { AxiosHttpClient } from './api/AxiosHttpClient';
+import { WelcomeMessage, WelcomeRepository } from './api/repositories/WelcomeRepository';
+import { WelcomeService } from './api/services/WelcomeService';
 
 function App() {
+  const useService = new WelcomeService(new WelcomeRepository(new AxiosHttpClient()));
+  const [welcomeMessage, setWelcomeMessage] = useState<WelcomeMessage>();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await useService.getWelcomeMessage();
+      setWelcomeMessage(response); 
+    }
+    fetchData();
+  });
+
+
   return (
     <div className="App">
       <header className="App-header">
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          {welcomeMessage}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
