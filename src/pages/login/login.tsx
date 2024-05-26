@@ -1,7 +1,7 @@
 
-import { ChangeEvent, FormEvent, useContext, useState } from "react";
+import { ChangeEvent, FormEvent, useContext, useEffect, useState } from "react";
 import './login.styles.css';
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { UserLogin } from "../../models/User";
 import { AuthContext } from "../../context/Auth";
 import LoginBg from '../../assets/img/login-bg-logo.png';
@@ -11,11 +11,21 @@ import { Button } from "../../components/button/Button";
 export function LoginPage() {
     const authContext = useContext(AuthContext);
     const { Login, isLogged } = authContext || {};
+    const navigate = useNavigate(); // Obtenha a função de navegação
 
     const [loginData, setLoginData] = useState<UserLogin>({
         email: '',
         password: ''
     });
+
+    const [redirected, setRedirected] = useState(false); // Estado para controlar o redirecionamento
+
+    useEffect(() => {
+        if (isLogged && !redirected) {
+            navigate('/home');
+            setRedirected(true);
+        }
+    }, [isLogged, redirected, navigate]);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -29,12 +39,13 @@ export function LoginPage() {
         e.preventDefault();
         if (Login) {
             Login(loginData);
-
+            alert('Logado com sucesso!');
         }
     };
 
     if (isLogged) {
-        return <Navigate to="/home" />
+        alert('Usuário já logado');
+        return <Navigate to="/" />;
     }
     return (
         <div className="container">

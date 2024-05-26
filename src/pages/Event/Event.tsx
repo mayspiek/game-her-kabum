@@ -35,20 +35,23 @@ export const Event = () => {
                         </div>
                     ))}
                 </div>
-                
                 <h3>Atualizações</h3>
                 <div className="atualizacoes">
-                    {atualizacoes.map((event, index) => (
-                        <div className="atualizacao--card" key={index}>
-                            <img src={event.img} alt={event.title} />
-                            <h3 className="atualizacao--event--title">{event.title}</h3>
-                            <div className="localNDate">
-                                <p className="atualizacao--event--date">{event.date}</p>
-                                <p className="atualizacao--event--local">{event.local}</p>
-                            </div>
-                            <p className="atualizacao--event--desc">{event.description}</p>
-                        </div>
-                    ))}
+                    {atualizacoes.map((event, index) => {
+                        return (
+                            <a href={event.href}>
+                                <div className="atualizacao--card" key={index}>
+                                    <img className="atualizacao--img" src={event.img} alt="" />
+                                    <h3 className="atualizacao--event--title">{event.title}</h3>
+                                    <div className="localNDate">
+                                        <p className="atualizacao--event--date">{event.date}</p>
+                                        <p className="atualizacao--event--local">{event.local}</p>
+                                    </div>
+                                    <p className="atualizacao--event--desc">{event.description}</p>
+                                </div>
+                            </a>
+                        )
+                    })}
                 </div>
             </div>
         </div>

@@ -61,6 +61,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setTimeoutState(null);
     localStorage.removeItem("@auth:user");
     localStorage.removeItem("@auth:timeout");
+    alert("Deslogado com sucesso!");
   };
 
   return (

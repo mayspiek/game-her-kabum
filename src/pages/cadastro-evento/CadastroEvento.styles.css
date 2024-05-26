@@ -1,0 +1,18 @@
+.publicOptions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btn-button{
+    background-color: rgb(251, 247, 251);
+    color: #1b1b1b;
+    width: 100%;
+    padding: 5px;
+}
+.btn-check{
+    background-color: #5C3088;
+    width: 100%;
+    color: #fff;
+    padding: 5px;
+}

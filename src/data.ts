@@ -36,18 +36,19 @@ export const recomendacaoEvento = [
 
 export const atualizacoes = [
     {
+        title: 'Torneio de FIFA',
+        description: 'Lorem ipsum dolor sit amet consectetur. Bibendum sem nunc porta mauris nisi in donec enim. Eget sit sem erat diam porttitor.',
+        date : new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: '2-digit'}).format(new Date('2024-07-11')),
+        local: 'Recife, PE',
+        img: Atualizacao2,
+        href: '/eventos/fifa'
+    },
+    {
         title: 'Competição de CS',
         description: 'Lorem ipsum dolor sit amet consectetur. Bibendum sem nunc porta mauris nisi in donec enim. Eget sit sem erat diam porttitor.',
         date : new Intl.DateTimeFormat('pt-BR', {day: '2-digit', month: '2-digit'}).format(new Date('2024-07-05')),
         local: 'Recife, PE',
         img: Atualizacao1
-    },
-    {
-        title: 'Torneio de FIFA',
-        description: 'Lorem ipsum dolor sit amet consectetur. Bibendum sem nunc porta mauris nisi in donec enim. Eget sit sem erat diam porttitor.',
-        date : new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: '2-digit'}).format(new Date('2024-07-11')),
-        local: 'Recife, PE',
-        img: Atualizacao2
     },
     {
         title: 'Evento de LOL',
