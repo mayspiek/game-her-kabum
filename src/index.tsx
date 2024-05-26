@@ -10,11 +10,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <>
-  <Helmet>
-    <title>Game.her</title>
-    <link rel="icon" href={LogoPequenaW} />
-  </Helmet>
-  
+    <Helmet>
+      <title>Game.her</title>
+      <link rel="icon" href={LogoPequenaW} />
+    </Helmet>
+
     <React.StrictMode>
       <App />
     </React.StrictMode>
