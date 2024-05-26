@@ -28,7 +28,7 @@ export interface EventCreate {
 }
 
 export enum PublicType {
-    GENERAL = "Público Geral",
+    GENERAL = "Públic Geral",
     FEMALE = "Público Feminino"
 }
 
