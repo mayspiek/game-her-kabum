@@ -4,7 +4,7 @@ import './login.styles.css';
 import { Navigate } from "react-router-dom";
 import { UserLogin } from "../../models/User";
 import { AuthContext } from "../../context/Auth";
-import LoginBg from '../../assets/img/login-bg.png';
+import LoginBg from '../../assets/img/login-bg-logo.png';
 import LoginCompl from '../../assets/img/logo-compl.png'
 import { Button } from "../../components/button/Button";
 
@@ -29,12 +29,13 @@ export function LoginPage() {
         e.preventDefault();
         if (Login) {
             Login(loginData);
-            <Navigate to='/home' />
-        }
 
+        }
     };
 
-
+    if (isLogged) {
+        return <Navigate to="/home" />
+    }
     return (
         <div className="container">
             <div className="imageBg">
@@ -52,7 +53,7 @@ export function LoginPage() {
 
                 <form onSubmit={handleSubmit}>
                     <div>
-                        <label htmlFor="email">Email:</label>
+                        <label className="form--label" htmlFor="email">E-mail:</label>
                         <input
                             type="email"
                             name="email"
@@ -62,7 +63,7 @@ export function LoginPage() {
                         />
                     </div>
                     <div>
-                        <label htmlFor="password">Password:</label>
+                        <label className="form--label" htmlFor="password">Senha:</label>
                         <input
                             type="password"
                             name="password"
@@ -71,7 +72,7 @@ export function LoginPage() {
                             required
                         />
                     </div>
-                    <Button>Login</Button>
+                    <Button type="submit">Entrar</Button>
                 </form>
             </div>
         </div>

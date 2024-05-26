@@ -10,7 +10,7 @@ export interface Event {
     updatedAt: Date;
 }
 
-export interface CreateEvent {
+export interface EventCreate {
     id: string;
     title: string;
     game: string;
@@ -20,6 +20,7 @@ export interface CreateEvent {
     number: string;
     date: Date;
     cpf: string;
+    price: number;
     cardType: CardType;
     verificationCode: number;
     expirationCode: string;
