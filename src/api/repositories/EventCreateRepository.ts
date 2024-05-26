@@ -1,21 +1,15 @@
-import { CreateEvent } from "../../models/Event";
+import { EventCreate } from "../../models/Event";
 import { HttpResponse, IHttpClient } from "../IHttpClient";
 
-export interface ICreateEventRepository {
-    createEvent(createEvent: CreateEvent): Promise<HttpResponse<CreateEvent>>;
+export interface IEventCreateRepository {
+    createEvent(eventCreate: EventCreate): Promise<HttpResponse<EventCreate>>;
 }
 
-export class CreateEventRepository implements ICreateEventRepository {
+export class EventCreateRepository implements IEventCreateRepository {
     constructor(private httpClient: IHttpClient) { }
 
-    async createEvent(createEvent : CreateEvent): Promise<HttpResponse<CreateEvent>> {
-        const response = await this.httpClient.post<CreateEvent>({ url: "/event/create", body: { email, password } });
+    async createEvent(eventCreate: EventCreate): Promise<HttpResponse<EventCreate>> {
+        const response = await this.httpClient.post<EventCreate>({ url: "/event/create", body: eventCreate });
         return response;
     }
-
-    async register(user: User): Promise<HttpResponse<User>> {
-        const response = await this.httpClient.post<User>({ url: "/user/register", body: user });
-        return response;
-    }
-
 }
