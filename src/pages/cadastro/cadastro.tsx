@@ -10,7 +10,6 @@ import backgroundImage from '../../assets/img/cadastro_tela.png';
 import nomeLogo from '../../assets/img/logo-compl.png';
 import NavBar from "../../components/navbar/NavBar";
 
-
 function Cadastro() {
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
@@ -38,7 +37,7 @@ function Cadastro() {
         }
 
         try{
-            const useService = new UserRegisterService(new UserRegisterRepository(new AxiosHttpClient));
+            const useService = new UserRegisterService(new UserRegisterRepository(new AxiosHttpClient()));
 
             useService.register(user);
         } catch (error) {
