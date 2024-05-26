@@ -2,7 +2,7 @@ export interface Event {
     id: string;
     name: string;
     description: string;
-    date: string;
+    date: Date;
     location: string;
     image: string;
     price?: number;
@@ -10,18 +10,20 @@ export interface Event {
     updatedAt: Date;
 }
 
-export interface CreateEvent {
+export interface EventCreate {
     id: string;
+    type: string;
     title: string;
     game: string;
     cashPrize: number;
     hour: string;
     description: string;
     number: string;
+    price: number;
     date: Date;
     cpf: string;
     cardType: CardType;
-    verificationCode: number;
+    verificationCode: string;
     expirationCode: string;
 }
 
