@@ -1,3 +1,9 @@
+.publicOptions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
 .btn-button{
     background-color: rgb(251, 247, 251);
     color: #1b1b1b;
