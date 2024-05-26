@@ -81,19 +81,7 @@ function Cadastro() {
                             <button type="button" className={ user.role === Role.ROLE_USER ? "btn-check" : "btn-button"} onClick={() => handleRole(Role.ROLE_USER)}>Gamer</button>
                             <button type="button" className={ user.role === Role.ROLE_ORGANIZADOR ? "btn-check" : "btn-button"} onClick={() => handleRole(Role.ROLE_ORGANIZADOR)}>Organizador</button>
                         </div>
-=======
-                </div>
-                <div className="input-container">
-                    <label htmlFor="genero">Qual o seu gênero?</label>
-                    <div className="gender-options">
- 
-                            
-                    <button className={ Gender === Gender.FEMININO ? "btn-check" : "btn-button"}onClick={()=>handleSelectGender(Gender.FEMININO)}>Feminino</button>
-                
-                            
-                    <button className={ gender === Gender.MASCULINO ? "btn-check" : "btn-button"}onClick={()=>handleSelectGender(Gender.MASCULINO)}>Masculino</button>
                     </div>
-                    
                     <div className="input-container">
                         <label htmlFor="genero">Qual o seu gênero?</label>
                         <div className="gender-options">
