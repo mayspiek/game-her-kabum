@@ -22,6 +22,7 @@ export interface EventCreate {
     price: number;
     date: Date;
     cpf: string;
+    price: number;
     cardType: CardType;
     verificationCode: string;
     expirationCode: string;

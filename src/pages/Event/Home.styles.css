@@ -1,0 +1,101 @@
+.homePage h3 {
+    font-size: 20px;
+}
+
+
+.busca {
+    width: 100%;
+    position: relative;
+}
+
+.busca input {
+    width: 100%;
+    position: relative;
+}
+
+.busca img {
+    width: 20px;
+    position: absolute;
+    right: 20px;
+    top: 13px;
+    cursor: pointer;
+}
+
+.eventBody {
+    padding: 0 15rem;
+}
+
+.event--card {
+    background-color: var(--white);
+    display: flex;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    align-items: center;
+}
+
+.event--card span {
+    font-size: var(--labels-txt-sz);
+}
+
+.eventCardWrapper {
+    display: grid;
+    gap: 1rem;
+}
+
+.event--date {
+    font-size: var(--destque-txt-sz);
+    font-weight: 800;
+    position: relative;
+    margin: 0 2rem 0 0;
+
+}
+
+.event--date::after {
+    content: '';
+    display: grid;
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    right: 0;
+    top: 0;
+    background-color: var(--light-grey);
+    margin-right: -1rem;
+}
+
+.event--desc {
+    color: var(--normal-grey);
+}
+
+.atualizacoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.atualizacao--card {
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    width: 280px;
+}
+
+.atualizacao--event--title {
+    margin: 0;
+}
+
+.atualizacao--event--desc {
+    margin: 0;
+    text-align: justify;
+    font-size: var(--labels-txt-sz);
+}
+
+.atualizacao--img{
+    width: 250px;
+}
+
+.localNDate {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+}

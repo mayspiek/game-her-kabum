@@ -3,8 +3,6 @@ import { FormEvent, useState } from "react";
 import { Link } from "react-router-dom";
 import "./cadastro.styles.css";
 import { Gender, Role, User } from "../../models/User";
-import { UserLoginService } from "../../api/services/UserLoginService";
-import { UserLoginRepository } from "../../api/repositories/UserLoginRepository";
 import { AxiosHttpClient } from "../../api/AxiosHttpClient";
 import { UserRegisterService } from "../../api/services/UserRegisterService";
 import { UserRegisterRepository } from "../../api/repositories/UserRegisterRepository";
@@ -19,7 +17,6 @@ function Cadastro() {
     const [gender, setGender] = useState<Gender>();
     const [role, setRole] = useState<Role>();
     const [confirmPassword, setConfirmPassword] = useState("");
-
     const [user, setUser] = useState<User>({
         name: "",
         username: "",
