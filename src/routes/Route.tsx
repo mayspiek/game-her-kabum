@@ -4,8 +4,6 @@ import { LoginPage } from '../pages/login/login'
 import { About } from '../pages/about/About'
 import { Event } from '../pages/Event/Event'
 import { CadastroEvento } from '../pages/cadastro-evento/CadastroEvento'
-import { Teste } from '../pages/eventCreate/eventCreate'
-import { Home } from '../pages/home/home'
 
 
 export const Rotas = () => {
@@ -17,8 +15,6 @@ export const Rotas = () => {
                 <Route path="/eventos" Component={Event} />
                 <Route path="/cadastrar-evento" Component={CadastroEvento} />
                 <Route path="/" Component={About} />
-                <Route path="/create" Component={Teste} />
-                <Route path="/home" Component={Home} />
             </Routes>
 
         </BrowserRouter>

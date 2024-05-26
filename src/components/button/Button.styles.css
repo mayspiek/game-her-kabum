@@ -2,13 +2,17 @@
     background-color: var(--purple-normal);
     border-radius: var(--border-radius);
     width: 100%;
-    color: var(--white);
     padding: .75rem 1.875rem;
     font-weight: 600;
 
     margin: 0 auto;
 
     transition: all .2s ease-in-out;
+}
+
+.globalButton a{
+    color: var(--white);
+
 }
 
 .globalButton:hover{
