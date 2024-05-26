@@ -1,6 +1,5 @@
 // Importações necessárias
 import { FormEvent, useState } from "react";
-import { Link } from "react-router-dom";
 import "./cadastro.styles.css";
 import { Gender, Role, User } from "../../models/User";
 import { AxiosHttpClient } from "../../api/AxiosHttpClient";

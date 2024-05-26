@@ -14,7 +14,7 @@ export const Event = () => {
                 <div className="busca">
                     <label htmlFor="search" />
                     <input placeholder="Buscar eventos" name='search' type="text" />
-                    <img src={SearchIcon} alt="" />
+                    <img src={SearchIcon} alt="Search Icon" />
                 </div>
 
                 <h3>Atenção</h3>
@@ -22,20 +22,18 @@ export const Event = () => {
 
                 <h3>Recomendações de eventos</h3>
                 <div className="eventCardWrapper">
-                    {recomendacaoEvento.map((evento, index) => {
-                        return (
-                            <div className="event--card">
-                                <div>
-                                    <p className="event--date">{evento.data}</p>
-                                </div>
-                                <div key={index}>
-                                    <h3 className="event--title">{evento.titulo}</h3>
-                                    <p className="event--desc">{evento.descricao}</p>
-                                    <span>Saiba mais <img src={arrow} alt="" /> </span>
-                                </div>
+                    {recomendacaoEvento.map((evento, index) => (
+                        <div className="event--card" key={index}>
+                            <div>
+                                <p className="event--date">{evento.data}</p>
                             </div>
-                        )
-                    })}
+                            <div>
+                                <h3 className="event--title">{evento.titulo}</h3>
+                                <p className="event--desc">{evento.descricao}</p>
+                                <span>Saiba mais <img src={arrow} alt="Arrow Icon" /> </span>
+                            </div>
+                        </div>
+                    ))}
                 </div>
                 <h3>Atualizações</h3>
                 <div className="atualizacoes">
@@ -59,3 +57,5 @@ export const Event = () => {
         </div>
     )
 }
+
+export default Event;
