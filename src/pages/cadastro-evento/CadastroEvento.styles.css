@@ -33,4 +33,17 @@
     gap: 5rem;
 }
 
+.cardInfo{
+    margin-bottom: 3rem;
+}
+
+.validacaoCartao{
+    margin-bottom: 1rem;
+}
+
+.cadastro--evento--form{
+    display: grid;
+    gap: 1rem;
+}
+
 

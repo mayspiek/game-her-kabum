@@ -83,9 +83,25 @@
     border-radius: var(--border-radius);
     width: 280px;
 }
+.atualizacao--title{
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
 
+.atualizacao--title img{
+    width: 20px;
+    cursor: pointer;
+}
 .atualizacao--event--title {
     margin: 0;
+}
+
+.atualizacoes--icons{
+    display: inline-flex;
+    gap: 5px;
 }
 
 .atualizacao--event--desc {

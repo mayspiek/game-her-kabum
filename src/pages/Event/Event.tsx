@@ -3,6 +3,8 @@ import SearchIcon from '../../assets/img/search-icon.png'
 import { atualizacoes, recomendacaoEvento } from "../../data"
 import arrow from '../../assets/img/arrow.png'
 import './Event.styles.css'
+import denuncia from '../../assets/img/denuncia.png'
+import coracao from '../../assets/img/coracao.png'
 
 export const Event = () => {
     return (
@@ -42,17 +44,23 @@ export const Event = () => {
                     <div className="atualizacoes">
                         {atualizacoes.map((event, index) => {
                             return (
-                                <a href={event.href}>
-                                    <div className="atualizacao--card" key={index}>
-                                        <img className="atualizacao--img" src={event.img} alt="" />
-                                        <h3 className="atualizacao--event--title">{event.title}</h3>
-                                        <div className="localNDate">
-                                            <p className="atualizacao--event--date">{event.date}</p>
-                                            <p className="atualizacao--event--local">{event.local}</p>
+                                <div className="atualizacao--card" key={index}>
+                                    <img className="atualizacao--img" src={event.img} alt="" />
+                                    <div className="atualizacao--title">
+                                        <a href={event.href}>
+                                            <h3 className="atualizacao--event--title">{event.title}</h3>
+                                        </a>
+                                        <div className="atualizacoes--icons">
+                                            <img src={denuncia} alt="" />
+                                            <img src={coracao} alt="" />
                                         </div>
-                                        <p className="atualizacao--event--desc">{event.description}</p>
                                     </div>
-                                </a>
+                                    <div className="localNDate">
+                                        <p className="atualizacao--event--date">{event.date}</p>
+                                        <p className="atualizacao--event--local">{event.local}</p>
+                                    </div>
+                                    <p className="atualizacao--event--desc">{event.description}</p>
+                                </div>
                             )
                         })}
                     </div>
