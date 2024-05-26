@@ -46,9 +46,7 @@ export function LoginPage() {
 
     if (isLogged) {
         alert('Usuário já logado');
-        return (
-            <div></div>
-        );
+        return <Navigate to="/" />;
     }
     return (
         <div className="container">
