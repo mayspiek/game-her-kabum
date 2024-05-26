@@ -1,7 +1,13 @@
 import './NavBar.styles.css';
 import LogoPequenaW from '../../assets/img/logo-pequena-w.png'
+import { useContext } from 'react';
+import { AuthContext } from '../../context/Auth';
+import { Button } from '../button/Button';
 
 export default function NavBar() {
+    const authContext = useContext(AuthContext);
+    const { isLogged, Logout } = authContext || {};
+
     return (
         <div className="navBar">
             <div className="logoContainer">
@@ -11,7 +17,7 @@ export default function NavBar() {
             <div className="navigation">
                 <ul className="ulNavigation">
                     <li>
-                        <a className="nav--item" href="/home">Início</a>
+                        <a className="nav--item" href="/">Início</a>
                     </li>
                     <li>
                         <a className="nav--item" href="/eventos">Eventos</a>
@@ -22,6 +28,9 @@ export default function NavBar() {
                     <li>
                         <a className="nav--item" href="/cadastrar-evento">Cadastrar Evento</a>
                     </li>
+                    {isLogged ? <Button onClick={Logout}>
+                        Logout
+                    </Button> : true}
                 </ul>
             </div>
         </div>

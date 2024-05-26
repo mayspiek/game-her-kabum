@@ -1,12 +1,12 @@
 
 import { ChangeEvent, FormEvent, useContext, useState } from "react";
 import './login.styles.css';
-import { Navigate } from "react-router-dom";
 import { UserLogin } from "../../models/User";
 import { AuthContext } from "../../context/Auth";
 import LoginBg from '../../assets/img/login-bg-logo.png';
 import LoginCompl from '../../assets/img/logo-compl.png'
 import { Button } from "../../components/button/Button";
+import { Navigate } from "react-router-dom";
 
 export function LoginPage() {
     const authContext = useContext(AuthContext);
@@ -29,12 +29,15 @@ export function LoginPage() {
         e.preventDefault();
         if (Login) {
             Login(loginData);
-
+            alert('Logado com sucesso!');
         }
     };
 
     if (isLogged) {
-        return <Navigate to="/home" />
+        alert('Usuário já logado');
+        return (
+            <div></div>
+        );
     }
     return (
         <div className="container">

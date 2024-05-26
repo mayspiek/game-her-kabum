@@ -76,7 +76,7 @@
     background-color: var(--white);
     padding: 1rem;
     border-radius: var(--border-radius);
-    width: 320px;
+    width: 280px;
 }
 
 .atualizacao--event--title {
@@ -87,6 +87,10 @@
     margin: 0;
     text-align: justify;
     font-size: var(--labels-txt-sz);
+}
+
+.atualizacao--img{
+    width: 250px;
 }
 
 .localNDate {
