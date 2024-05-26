@@ -1,15 +1,17 @@
 
 import { ChangeEvent, FormEvent, useContext, useState } from "react";
-import './style.css';
+import './login.styles.css';
 import { Navigate } from "react-router-dom";
 import { UserLogin } from "../../models/User";
 import { AuthContext } from "../../context/Auth";
-import LoginBg from '../../assets/img/login-bg.png';
+import LoginBg from '../../assets/img/login-bg-logo.png';
+import LoginCompl from '../../assets/img/logo-compl.png'
+import { Button } from "../../components/button/Button";
 
 export function LoginPage() {
     const authContext = useContext(AuthContext);
     const { Login, isLogged } = authContext || {};
-    
+
     const [loginData, setLoginData] = useState<UserLogin>({
         email: '',
         password: ''
@@ -27,38 +29,52 @@ export function LoginPage() {
         e.preventDefault();
         if (Login) {
             Login(loginData);
-            <Navigate to='/home' />
+
         }
-        
     };
 
-
+    if (isLogged) {
+        return <Navigate to="/home" />
+    }
     return (
         <div className="container">
-            <img src={LoginBg} alt="" />
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        name="email"
-                        value={loginData.email}
-                        onChange={handleChange}
-                        required
-                    />
+            <div className="imageBg">
+                <img src={LoginBg} alt="" />
+            </div>
+            <div className="loginForms">
+                <div className="logoComp">
+                    <img src={LoginCompl} alt="" />
                 </div>
-                <div>
-                    <label htmlFor="password">Password:</label>
-                    <input
-                        type="password"
-                        name="password"
-                        value={loginData.password}
-                        onChange={handleChange}
-                        required
-                    />
+
+                <div className="text">
+                    <h2>Realize seu Login</h2>
+                    <p>Preencha os campos abaixo com os seus dados para acessar sua conta</p>
                 </div>
-                <button type="submit">Login</button>
-            </form>
+
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label className="form--label" htmlFor="email">E-mail:</label>
+                        <input
+                            type="email"
+                            name="email"
+                            value={loginData.email}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label className="form--label" htmlFor="password">Senha:</label>
+                        <input
+                            type="password"
+                            name="password"
+                            value={loginData.password}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <Button type="submit">Entrar</Button>
+                </form>
+            </div>
         </div>
     );
 }
