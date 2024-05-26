@@ -1,0 +1,70 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.loginForms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 13rem;
+}
+
+.imageBg {
+  height: 100vh;
+}
+
+.imageBg>img {
+  width: 100%;
+}
+
+.logoComp>img {
+  margin-top: 10rem;
+  width: 350px;
+}
+
+.text {
+  width: 100%;
+}
+
+h2,
+p,
+label {
+  color: var(--dark-grey)
+}
+
+label {
+  font-size: var(--subtitulos-text-sz);
+  font-weight: 600;
+}
+
+form {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.525rem;
+}
+
+form>div {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+input {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  border: none;
+  padding: .825rem;
+  color: var(--dark-grey);
+}
+
+.form--label {
+  margin-bottom: .5rem;
+}

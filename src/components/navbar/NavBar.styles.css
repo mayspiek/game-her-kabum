@@ -9,6 +9,10 @@ margin-top: 4px;
 }
 
 
+.logoContainer > img {
+    width: 81px;
+}
+
 .navBar {
     display: flex;
     justify-content: space-between;

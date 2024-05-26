@@ -14,6 +14,16 @@
     font-weight: 600;
 }
 
+.experienciaPersonalizada .information > div{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem
+}
+
+.experienciaPersonalizada .information p {
+    text-align: justify;
+}
+
 .registroOuLogin{
     margin: 4rem auto 0 auto;
 }
@@ -26,4 +36,8 @@
 
 .possuiConta > a {
     text-decoration: underline;
+}
+
+.boasVindas > img{
+    width: 100%;
 }

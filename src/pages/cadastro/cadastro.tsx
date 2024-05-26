@@ -19,7 +19,6 @@ function Cadastro() {
     const [gender, setGender] = useState<Gender>(Gender.FEMININO);
     const [role, setRole] = useState<Role>(Role.ROLE_USER);
     const [confirmPassword, setConfirmPassword] = useState("");
-
     const [user, setUser] = useState<User>({
         name: "",
         username: "",
