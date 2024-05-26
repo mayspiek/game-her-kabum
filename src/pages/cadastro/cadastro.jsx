@@ -13,6 +13,8 @@ function Cadastro() {
     const [role, setRole] = useState(false);
     const [confirmPassword, setConfirmPassword] = useState("");
 
+    
+
     const handleSubmit = (event) => {
         event.preventDefault();
 

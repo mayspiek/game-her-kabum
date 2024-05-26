@@ -1,0 +1,51 @@
+.logoContainer {
+    width: 80px;
+    height: 100%;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .7rem 15rem;
+    color: black;
+    position: relative;
+    background-color: var(--purple-normal);
+}
+
+
+.ulNavigation {
+    display: flex;
+    gap: 3rem;
+}
+
+.nav--item {
+    color: white;
+    position: relative;
+    font-weight: 600;
+}
+
+.nav--item:hover::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    bottom: -3px;
+    border-radius: var(--border-radius);
+}
+
+
+.nav--item:hover::before {
+    animation: slideInFromLeft .4s ease-in-out forwards;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}

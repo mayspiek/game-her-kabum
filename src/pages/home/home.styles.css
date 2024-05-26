@@ -1,0 +1,25 @@
+.homeContent{
+    padding: 0 15rem;
+}
+
+.homeContent > div {
+    margin-bottom: 3rem;
+}
+
+.experienciaPersonalizada{
+    display: grid;
+}
+
+.experienciaPersonalizada > a {
+    font-weight: 600;
+}
+
+.registroOuLogin{
+    margin: 4rem auto 0 auto;
+}
+
+.possuiConta{
+    justify-content: center;
+    width: 100%;
+    gap: 3px;  
+}
