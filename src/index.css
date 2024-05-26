@@ -2,8 +2,9 @@
 
 #root {
   width: 100vw;
-  height: 100vh;
+  height: max-content;
   background-color: var(--off-white);
+  overflow-x: hidden;
 }
 
 :root {
@@ -14,6 +15,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --subtitulos-txt-sz: 20px;
+  --titulos-txt-sz: 40px;
   --border-radius: .7rem;
 
   --purple-normal: #5C3088;
