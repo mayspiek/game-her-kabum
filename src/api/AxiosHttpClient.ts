@@ -7,7 +7,9 @@ export class AxiosHttpClient implements IHttpClient {
     constructor() {
         this.axiosInstance = axios.create({
             baseURL: 'http://159.203.106.163:8080',
-
+            headers: {
+                'Content-Type': 'application/json'
+            }
         });
     }
 
