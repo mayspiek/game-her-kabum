@@ -3,6 +3,7 @@ import Cadastro from '../pages/cadastro/cadastro'
 import { LoginPage } from '../pages/login/login'
 import { About } from '../pages/about/About'
 import { Teste } from '../pages/eventCreate/eventCreate'
+import { Home } from '../pages/home/home'
 
 export const Rotas = () => {
     return (
@@ -12,6 +13,7 @@ export const Rotas = () => {
                 <Route path="/registro" Component={Cadastro} />
                 <Route path="/create" Component={Teste} />
                 <Route path="/" Component={About} />
+                <Route path="/home" Component={Home} />
             </Routes>
 
         </BrowserRouter>
