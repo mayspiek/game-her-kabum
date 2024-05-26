@@ -68,10 +68,12 @@ function Cadastro() {
     return (
         <div>
             <NavBar />
-            <div className="container">
-                <img src={backgroundImage} className="background" />
-                <form className="form" onSubmit={handleSubmit}>
-                    <img src={nomeLogo} alt="Logo" className="logo" />
+            <div className="cadastro-container">
+                <div className="cadastro-background">
+                    <img src={backgroundImage} alt="" className="background" />
+                </div>
+                <form className="cadastro-form" onSubmit={handleSubmit}>
+                    <img src={nomeLogo} alt="Logo" className="cadastro-logo" />
 
 
                     <div className="container_titulo">
