@@ -1,0 +1,140 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #1111;
+    background-color: #f8f8f8;
+  }
+  
+  .perfil-section {
+    margin-bottom: 30px;
+  }
+  
+  .perfil-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .perfil-section h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .calendar-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 20px;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .month-selector {
+    display: flex;
+    align-items: center;
+  }
+  
+  .month-selector span {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .weekdays {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .weekdays span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #888;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+  }
+  
+  .calendar-cell {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .calendar-cell:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .favorites-section {
+    margin-bottom: 30px;
+  }
+  
+  .favorites-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .favorite-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .event-date {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1111;
+  }
+  
+  .event-info {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .event-info h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .event-info p {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .fas {
+    font-size: 20px;
+    color: #888;
+  }
+
+
+.calendar-cell.selected {
+    background-color: #f0f0f0;
+    border-color: #5C3088; /* Cor de destaque do dia selecionado */
+    color: #fff; /* Cor do texto do dia selecionado */
+    font-weight: bold;
+  }
+  
+  .favorite-item.selected {
+    background-color: #f0f0f0;
+    border-color: #5C3088;
+    color: #fff;
+    font-weight: bold;
+  }
