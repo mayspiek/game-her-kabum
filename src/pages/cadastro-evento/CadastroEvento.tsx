@@ -15,7 +15,7 @@ export const CadastroEvento = () => {
             <NavBar />
             <div className='eventRegisterWrapper'>
                 <h2>Cadastre seu evento</h2>
-                <form>
+                <form className='cadastro--evento--form'>
                     <div className='form--label--item'>
                         <label htmlFor="name">Nome do evento</label>
                         <input placeholder="Nome do evento" name='name' type="text" />
@@ -103,7 +103,7 @@ export const CadastroEvento = () => {
                         </div>
                     </div>
 
-                    <Button> Cadastrar </Button>
+                    <Button type='submit'> Cadastrar </Button>
                 </form>
             </div>
         </>
