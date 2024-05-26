@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Cadastro from '../componentes/cadastro/cadastro'
-import Login from '../componentes/login'
+import Cadastro from '../pages/cadastro/cadastro'
+import Login from '../pages/login/login'
+import { Home } from '../pages/home'
 
 export const Rotas = () => {
     return (
@@ -8,7 +9,7 @@ export const Rotas = () => {
             <Routes>
                 <Route path="/login" Component={Login} />
                 <Route path="/register" Component={Cadastro} />
-                <Route path="/" Component={Login} />
+                <Route path="/" Component={Home} />
             </Routes>
             
         </BrowserRouter>
