@@ -1,0 +1,132 @@
+body{
+    background-color: #E4EAEE;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  background-color: #E4EAEE;
+  margin-top: 4rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container_titulo
+{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.Titulo{
+    font-size: 30px;
+}
+.submit{
+    background-color: #5C3088;
+    color: #fff;
+    border-radius: 5px;
+    width: 55%;
+    padding: 8px;
+    margin-top: 5px;
+}
+.voltar{
+    background-color: #5C3088;
+    color: #fff;
+    border-radius: 5px;
+    width: 100%;
+    padding: 5px;
+}
+/*formulario*/
+  .form {
+    justify-content: center;
+    background-color: #E4EAEE;
+    align-items: center;
+    width: 50%; 
+    padding: 20px; 
+    height: 100%;
+    display: flex;
+    flex-direction: column; 
+    gap: 29px;
+  }
+/*Logo gamerher*/
+.logo {
+    width: 30%;
+    margin-top: 300px;
+}
+/*imagem*/
+.background {
+    width: 55%; 
+    height: 160%;
+    margin-top: 246px;
+}
+
+.btn-button{
+    background-color: rgb(251, 247, 251);
+    color: #1b1b1b;
+    width: 100%;
+    padding: 5px;
+}
+.btn-check{
+    background-color: #5C3088;
+    width: 100%;
+    color: #fff;
+    padding: 5px;
+}
+
+.input-container {
+  /* Estilo para o contêiner de input */
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+}
+
+.input-container input{
+    border-radius: 5px;
+    outline: none;
+}
+
+.input-container label {
+  /* Estilo para o rótulo do input */
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input {
+  /* Estilo para o input */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+
+
+.gender-options,
+.role-options {
+  /* Estilo para as opções de gênero e papel */
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.gender-options > div,
+.role-options > div {
+  /* Estilo para cada opção */
+  display: flex;
+  align-items: center;
+
+}
+
+.btn-voltar {
+  /* Estilo para o botão "Voltar" */
+  padding: 10px 20px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-voltar:hover {
+  /* Estilo para o botão "Voltar" ao passar o mouse */
+  background-color: #ddd;
+}

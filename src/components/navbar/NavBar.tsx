@@ -16,6 +16,7 @@ export default function NavBar() {
 
             <div className="navigation">
                 <ul className="ulNavigation">
+                   
                     <li>
                         <a className="nav--item" href="/">Início</a>
                     </li>
