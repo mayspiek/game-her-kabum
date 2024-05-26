@@ -5,8 +5,8 @@ import { PublicType } from '../../models/Event'
 export const CadastroEvento = () => {
     const [publico, setPublico] = useState<PublicType>();
 
-    const handlePublico = (publico: string) => {
-
+    const handlePublico = (publico: PublicType) => {
+        setPublico(publico);
     }
 
     return (
@@ -26,9 +26,8 @@ export const CadastroEvento = () => {
                     <label htmlFor="">Qual o público o seu evento?</label>
                     <input name='' type="text" />
                     <div className='publicOptions'>
-                        <button className={publico === Role.ROLE_USER ? "btn-check" : "btn-button"} onClick={() => handlePublico(Role.ROLE_USER)}>Gamer</button>
-                        <button className=''>Público Feminino</button>
-
+                        <button className={publico === PublicType.GENERAL ? "btn-check" : "btn-button"} onClick={() => handlePublico(PublicType.GENERAL)}>Público Geral</button>
+                        <button className={publico === PublicType.FEMALE ? "btn-check" : "btn-button"} onClick={() => handlePublico(PublicType.FEMALE)}>Público Feminino</button>
                     </div>
                 </div>
                 <div className='form--label--item'>
