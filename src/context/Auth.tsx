@@ -52,7 +52,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       return response; 
 
     } else {
-      return "Usuário ou senha inválidos!";
+      return response;
     }
   };
 

@@ -35,16 +35,23 @@ export function LoginPage() {
         }));
     };
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => { 
         e.preventDefault();
-        if (Login) {
-            Login(loginData);
-            alert('Logado com sucesso!');
+        if (loginData && Login) {
+            try{
+                const response = await Login(loginData); 
+                if (response === 'Email ou senha inválidos' ) { 
+                    alert('Erro ao logar usuário');
+                }
+
+            } catch (error) {
+                console.error(error);
+            }
         }
     };
 
     if (isLogged) {
-        alert('Usuário já logado');
+        alert('Usuário logado');
         return <Navigate to="/" />;
     }
     return (
