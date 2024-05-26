@@ -1,19 +1,19 @@
-import { Navigate } from "react-router-dom"
 import { Button } from "../../components/button/Button"
 import { GamesTitle } from "../../components/gamesTitle/GamesTitle"
 import NavBar from "../../components/navbar/NavBar"
-import './home.styles.css'
+import './About.styles.css'
 import { boasVindas, experienciaPersonalizada, principaisEventos } from "../../data"
+import { Link } from "react-router-dom"
 
-export const PossuiConta = () => {
+export const PossuiConta = ( { href }: { href: string } ) => {
     return (
         <div className="possuiConta flexCenter">
             <p>Já possui conta?</p>
-            <a href="">Faça o login</a>
+            <Link to={href}>Faça o login</Link>
         </div>
     )
 }
-export const Home = () => {
+export const About = () => {
 
     return (
         <>
@@ -36,11 +36,11 @@ export const Home = () => {
                     <p>{experienciaPersonalizada}</p>
 
                     <div className="registroOuLogin">
-                        <Button href={''}>
+                        <Button href='/registro'>
                             Realize seu cadastro na plataforma!
                         </Button>
 
-                        <PossuiConta />
+                        <PossuiConta href={'/login'}/>
                     </div>
                 </div>
             </div>

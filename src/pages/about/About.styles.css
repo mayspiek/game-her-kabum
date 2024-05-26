@@ -23,3 +23,7 @@
     width: 100%;
     gap: 3px;  
 }
+
+.possuiConta > a {
+    text-decoration: underline;
+}

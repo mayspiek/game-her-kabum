@@ -1,7 +1,14 @@
 // Importações necessárias
-import React, { useState } from "react";
+import { FormEvent, useState } from "react";
 import { Link } from "react-router-dom";
-import "./style.css";
+import "./cadastro.styles.css";
+import { Gender, Role, User } from "../../models/User";
+import { UserLoginService } from "../../api/services/UserLoginService";
+import { UserLoginRepository } from "../../api/repositories/UserLoginRepository";
+import { AxiosHttpClient } from "../../api/AxiosHttpClient";
+import { UserRegisterService } from "../../api/services/UserRegisterService";
+import { UserRegisterRepository } from "../../api/repositories/UserRegisterRepository";
+import { Button } from "../../components/button/Button";
 
 
 function Cadastro() {
@@ -9,13 +16,21 @@ function Cadastro() {
     const [email, setEmail] = useState("");
     const [nome, setNome] = useState("");
     const [nick, setNick] = useState("");
-    const [gender, setGender] = useState(false);
-    const [role, setRole] = useState(false);
+    const [gender, setGender] = useState<Gender>();
+    const [role, setRole] = useState<Role>();
     const [confirmPassword, setConfirmPassword] = useState("");
 
+    const [user, setUser] = useState<User>({
+        name: "",
+        username: "",
+        password: "",
+        gender: Gender.FEMININO,
+        email: "",
+        role: Role.ROLE_USER // valor padrão
+    });
     
 
-    const handleSubmit = (event) => {
+    const handleSubmit = (event : FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         if (password !== confirmPassword) {
@@ -23,14 +38,31 @@ function Cadastro() {
             return;
         }
 
+        try{
+            const useService = new UserRegisterService(new UserRegisterRepository(new AxiosHttpClient));
+
+            useService.register(user);
+        } catch (error) {
+            console.log(error);
+        }
+
         console.log({ email, password });
     };
 
-    const handleSelectGender = (gender) => {
+    const handleChanges = (event : FormEvent<HTMLInputElement>) => {
+        const { name, value } = event.currentTarget;
+
+        setUser((prevUser) => ({
+            ...prevUser,
+            [name]: value
+        }));
+    }
+
+    const handleSelectGender = (gender : Gender) => {
         setGender(gender);
         console.log(gender);
     };
-    const handleRole = (role) => {
+    const handleRole = (role : Role) => {
         setRole(role);
         console.log(role);
     };
@@ -45,7 +77,7 @@ function Cadastro() {
                     required
                     className="input"
                     value={nick}
-                    onChange={(e) => setNome(e.target.value)}
+                    onChange={handleChanges}
                 />
                 <input
                     type="text"
@@ -53,14 +85,14 @@ function Cadastro() {
                     required
                     className="input"
                     value={nome}
-                    onChange={(e) => setNick(e.target.value)}
+                    onChange={handleChanges}
                 />
                 <div className="checkBox-conainer">
                     <div>
                         <label htmlFor="feminino">Femino</label>
                         <input
                             checked={gender === "feminino"}
-                            onChange={() => handleSelectGender("feminino")}
+                            onChange={() => handleSelectGender(Gender.FEMININO)}
                             type="checkbox"
                             name="feminino"
                             id="feminino"
@@ -70,7 +102,7 @@ function Cadastro() {
                         <label htmlFor="masculino">Masculino</label>
                         <input
                             checked={gender === "masculino"}
-                            onChange={() => handleSelectGender("masculino")}
+                            onChange={() => handleSelectGender(Gender.MASCULINO)}
                             type="checkbox"
                             name="masculino"
                             id="masculino"
@@ -83,7 +115,7 @@ function Cadastro() {
                         <label htmlFor="feminino">Organizador</label>
                         <input
                             checked={role === "ROLE_ORGANIZADOR"}
-                            onChange={() => handleRole("ROLE_ORGANIZADOR")}
+                            onChange={() => handleRole(Role.ROLE_ORGANIZADOR)}
                             type="checkbox"
                             name="organizador"
                             id="organizador"
@@ -92,8 +124,8 @@ function Cadastro() {
                     <div>
                         <label htmlFor="masculino">Usuario</label>
                         <input
-                            checked={role === "ROLE_USUARIO"}
-                            onChange={() => handleRole("ROLE_USUARIO")}
+                            checked={role === "ROLE_USER"}
+                            onChange={() => handleRole(Role.ROLE_USER)}
                             type="checkbox"
                             name="usuario"
                             id="usuario"
@@ -107,7 +139,7 @@ function Cadastro() {
                     required
                     className="input"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={handleChanges}
                 />
                 <input
                     type="password"
@@ -115,7 +147,7 @@ function Cadastro() {
                     required
                     className="input"
                     value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    onChange={handleChanges}
                 />
                 <input
                     type="password"
@@ -123,11 +155,12 @@ function Cadastro() {
                     required
                     className="input"
                     value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    onChange={handleChanges}
                 />
-                <button type="submit" className="button">
+                <Button href={'/registro'}>
                     Cadastrar
-                </button>
+                </Button>
+                
                 <Link to="/login">
                     <button className="btn-voltar">Voltar</button>
                 </Link>
