@@ -96,7 +96,7 @@ function Cadastro() {
                 <div className="input-container">
                     <label htmlFor="genero">Qual o seu gênero?</label>
                     <div className="gender-options">
-              
+ 
                             
                     <button className={ gender === Gender.FEMININO ? "btn-check" : "btn-button"}onClick={()=>handleSelectGender(Gender.FEMININO)}>Feminino</button>
                 
