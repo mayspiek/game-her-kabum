@@ -2,15 +2,13 @@ import React from 'react';
 import './styles.css';
 import Navbar from './components/navbar';
 
-
 function App() {
   return (
     <div className="container">
-
       <div className="header">
         <img src="/logo-gameher.png" alt="Game.Her Logo" className="logo" />
-        <Navbar/>
-        <div  className="nav">
+        <Navbar />
+        <div className="nav">
           <a href="#">Início</a>
           <a href="#">Sobre</a>
         </div>
@@ -28,6 +26,7 @@ function App() {
 
         <div className="section">
           <div className="card">
+            <img src="/imagem1.jpg" alt="Game.Her" className="card-image" />
             <h3>Game.Her</h3>
             <p>
               Temos o objetivo de facilitar o acesso a jogos focados em mulheres, garantindo que essas oportunidades sejam amplamente conhecidas e que a rivalidade da habilidade no jogo prevaleça.
@@ -37,6 +36,7 @@ function App() {
           </div>
 
           <div className="card">
+            <img src="/img/card01_sob" alt="Como cadastrar eventos" className="card-image" />
             <h3>Como cadastrar eventos</h3>
             <ul>
               <li>Crie uma conta: Organizadores de eventos podem começar criando uma conta na Game.Her, isso permite o acesso ao painel de controle da plataforma.</li>
@@ -47,6 +47,7 @@ function App() {
           </div>
 
           <div className="card">
+            <img src="/imagem3.jpg" alt="Como acessar informações sobre eventos" className="card-image" />
             <h3>Como acessar informações sobre eventos</h3>
             <ul>
               <li>Navegue pelo Calendário: Acesse o calendário de eventos na página principal da Game.Her Hub. Use a interface amigável para navegar por datas e encontrar eventos que estão em nosso espaço para sua regional (ou em outras presenciais) que estão.</li>
