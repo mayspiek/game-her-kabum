@@ -69,7 +69,7 @@ export function LoginPage() {
                     <p>Preencha os campos abaixo com os seus dados para acessar sua conta</p>
                 </div>
 
-                <form onSubmit={handleSubmit}>
+                <form className="login-form" onSubmit={handleSubmit}>
                     <div>
                         <label className="form--label" htmlFor="email">E-mail:</label>
                         <input
