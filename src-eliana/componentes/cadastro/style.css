@@ -1,0 +1,64 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form h2 {
+    color: #000;
+}
+
+.input {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.checkBox-conainer {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    margin-bottom: 1rem;
+}
+
+.checkBox-conainer label {
+    color: #000;
+}
+
+.btn-voltar {
+    color: #fff;
+    position: absolute;
+    top: 4%;
+    left: 4%;
+    
+}
