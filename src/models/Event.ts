@@ -19,7 +19,6 @@ export interface EventCreate {
     hour: string;
     description: string;
     number: string;
-    price: number;
     date: Date;
     cpf: string;
     price: number;

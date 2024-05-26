@@ -9,7 +9,7 @@ export class UserRegisterRepository implements IUserRegisterRepository {
     constructor(private httpClient: IHttpClient) { }
 
     async register(user: User): Promise<HttpResponse<User>> {
-        const response = await this.httpClient.post<User>({ url: "/user/register", body: user });
+        const response = await this.httpClient.post<User>({ url: "/user/signup", body: user });
         return response;
     }
 }

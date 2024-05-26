@@ -1,13 +1,11 @@
 
 import { ChangeEvent, FormEvent, useContext, useEffect, useState } from "react";
-import './style.css';
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { UserLogin } from "../../models/User";
 import { AuthContext } from "../../context/Auth";
 import LoginBg from '../../assets/img/login-bg-logo.png';
 import LoginCompl from '../../assets/img/logo-compl.png'
 import { Button } from "../../components/button/Button";
-import { Navigate } from "react-router-dom";
 
 export function LoginPage() {
     const authContext = useContext(AuthContext);
@@ -46,7 +44,6 @@ export function LoginPage() {
 
     if (isLogged) {
         alert('Usuário já logado');
-        return <Navigate to="/" />;
     }
     return (
         <div className="container">
