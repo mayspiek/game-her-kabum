@@ -13,7 +13,7 @@ export const gameTitle = [
     'Fortnite'
 ]
 
-export const boasVindas = 'A Girls Game Hub é uma plataforma dedicada a divulgar eventos de jogos, promovendo a maior participação de meninas e mulheres no universo gamer. Nossa missão é garantir que jogadoras de todas as idades e níveis de experiência encontrem eventos que as acolham e celebrem.'
+export const boasVindas = 'A Game.Her é uma plataforma dedicada a divulgar eventos de jogos, promovendo a maior participação de meninas e mulheres no universo gamer. Nossa missão é garantir que jogadoras de todas as idades e níveis de experiência encontrem eventos que as acolham e celebrem.'
 
 export const principaisEventos = 'Encontre uma variedade de eventos de jogos focados em meninas e mulheres, desde torneios e campeonatos até meetups e workshops. Nosso calendário é constantemente atualizado para que você esteja sempre por dentro das últimas oportunidades.'
 

@@ -16,24 +16,27 @@ export default function NavBar() {
 
             <div className="navigation">
                 <ul className="ulNavigation">
-                   
+
                     <li>
                         <a className="nav--item" href="/">Início</a>
                     </li>
                     <li>
                         <a className="nav--item" href="/eventos">Eventos</a>
                     </li>
-                    <li>
-                        <a className="nav--item" href="/perfil">Perfil</a>
-                    </li>
-                    <li>
-                        <a className="nav--item" href="/cadastrar-evento">Cadastrar Evento</a>
-                    </li>
-                    {isLogged ? <Button onClick={Logout}>
-                        Logout
-                    </Button> : true}
+                    {isLogged ? <>
+                        <li>
+                            <a className="nav--item" href="/perfil">Perfil</a>
+                        </li>
+                        <li>
+                            <a className="nav--item" href="/cadastrar-evento">Cadastrar Evento</a>
+                        </li>
+                        <Button onClick={Logout}>
+                            Logout
+                        </Button>
+                    </>
+                        : true}
                 </ul>
             </div>
-        </div>
+        </div >
     )
 }

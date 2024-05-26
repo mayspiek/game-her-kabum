@@ -1,4 +1,4 @@
-.homePage h3 {
+.event-wrapper h3 {
     font-size: 20px;
 }
 
@@ -22,7 +22,16 @@
 }
 
 .eventBody {
+    margin-top: 3rem;
     padding: 0 15rem;
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.eventCardWrapper {
+    display: grid;
+    gap: 1rem;
 }
 
 .event--card {
@@ -35,11 +44,6 @@
 
 .event--card span {
     font-size: var(--labels-txt-sz);
-}
-
-.eventCardWrapper {
-    display: grid;
-    gap: 1rem;
 }
 
 .event--date {
@@ -70,6 +74,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
+    justify-content: space-between;
 }
 
 .atualizacao--card {
@@ -78,9 +83,25 @@
     border-radius: var(--border-radius);
     width: 280px;
 }
+.atualizacao--title{
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
 
+.atualizacao--title img{
+    width: 20px;
+    cursor: pointer;
+}
 .atualizacao--event--title {
     margin: 0;
+}
+
+.atualizacoes--icons{
+    display: inline-flex;
+    gap: 5px;
 }
 
 .atualizacao--event--desc {
