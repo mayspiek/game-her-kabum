@@ -2,6 +2,7 @@ import { EventCreate } from "../../models/Event";
 import { IEventCreateRepository } from "../repositories/EventCreateRepository";
 
 export class EventCreateService {
+    [x: string]: any;
     private eventCreateRepository: IEventCreateRepository;
 
     constructor(eventCreateRepository: IEventCreateRepository) {
@@ -9,6 +10,6 @@ export class EventCreateService {
     }
 
     async eventCreate(eventCreate: EventCreate) {
-        return await this.eventCreateRepository.createEvent(eventCreate);
+        return await this.eventCreateRepository.eventCreate(eventCreate);
     }
 }
