@@ -7,7 +7,7 @@ import { AxiosHttpClient } from "../../api/AxiosHttpClient";
 import { UserRegisterService } from "../../api/services/UserRegisterService";
 import { UserRegisterRepository } from "../../api/repositories/UserRegisterRepository";
 import { Button } from "../../components/button/Button";
-
+import './cadastro.styles.css';
 
 function Cadastro() {
     const [password, setPassword] = useState("");
@@ -36,7 +36,7 @@ function Cadastro() {
         }
 
         try{
-            const useService = new UserRegisterService(new UserRegisterRepository(new AxiosHttpClient));
+            const useService = new UserRegisterService(new UserRegisterRepository(new AxiosHttpClient()));
 
             useService.register(user);
         } catch (error) {
