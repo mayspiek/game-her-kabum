@@ -1,14 +1,5 @@
 import './NavBar.styles.css';
 
-const gameTitle = [
-    'LOL',
-    'Valorant',
-    'FreeFire',
-    'CS',
-    'Fortnite'
-]
-
-
 export default function NavBar() {
     return (
         <div className="navBar">
@@ -19,10 +10,10 @@ export default function NavBar() {
             <div className="navigation">
                 <ul className="ulNavigation">
                     <li>
-                        <a href="inicio">Início</a>
+                        <a className="nav--item" href="#inicio">Início</a>
                     </li>
                     <li>
-                        <a href="sobre">Sobre</a>
+                        <a className="nav--item" href="#sobre">Sobre</a>
                     </li>
                 </ul>
             </div>
