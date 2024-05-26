@@ -3,6 +3,10 @@
     height: 100%;
 }
 
+.logoContainer > img {
+    width: 81px;
+}
+
 .navBar {
     display: flex;
     justify-content: space-between;
