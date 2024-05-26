@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import NavBar from '../../components/navbar/NavBar';
-import './styles.css';
+import './style.css';
 
-function Perfil() {
+export function Perfil() {
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [selectedDate, setSelectedDate] = useState(null);
@@ -70,66 +70,66 @@ function Perfil() {
   const calendarDays = generateCalendar();
 
   return (
-    <div className="container">
+    <div className="perfil-container">
       <NavBar />
-
-      <div className="perfil-section">
-        <h2>Perfil</h2>
-        <h3>Calendário de eventos</h3>
-        <div className="calendar-container">
-          <div className="calendar-header">
-            <div className="month-selector">
-              <span>{['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'][currentMonth]} {currentYear}</span>
-              <button onClick={() => handleMonthChange(-1)}><i className="fas fa-angle-left"></i></button>
-              <button onClick={() => handleMonthChange(1)}><i className="fas fa-angle-right"></i></button>
-            </div>
-            <div className="weekdays">
-              <span>SEG</span>
-              <span>TER</span>
-              <span>QUA</span>
-              <span>QUI</span>
-              <span>SEX</span>
-              <span>SÁB</span>
-              <span>DOM</span>
-            </div>
-          </div>
-          <div className="calendar-grid">
-            {calendarDays.map((day, index) => (
-              <div key={index} className={`calendar-cell ${day === selectedDate ? 'selected' : ''}`} onClick={() => handleDaySelect(day)}>
-                {day !== null ? day : ''}
-                {/* Adicionar um conteúdo específico para cada dia*/}
+      <div className="perfil-section-container">
+        <div className="perfil-section">
+          <h2>Perfil</h2>
+          <h3>Calendário de eventos</h3>
+          <div className="calendar-container">
+            <div className="calendar-header">
+              <div className="month-selector">
+                <span>{['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'][currentMonth]} {currentYear}</span>
+                <button onClick={() => handleMonthChange(-1)}><i className="fas fa-angle-left"></i></button>
+                <button onClick={() => handleMonthChange(1)}><i className="fas fa-angle-right"></i></button>
               </div>
-            ))}
+              <div className="weekdays">
+                <span>SEG</span>
+                <span>TER</span>
+                <span>QUA</span>
+                <span>QUI</span>
+                <span>SEX</span>
+                <span>SÁB</span>
+                <span>DOM</span>
+              </div>
+            </div>
+            <div className="calendar-grid">
+              {calendarDays.map((day, index) => (
+                <div key={index} className={`calendar-cell ${day === selectedDate ? 'selected' : ''}`} onClick={() => handleDaySelect(day)}>
+                  {day !== null ? day : ''}
+                  {/* Adicionar um conteúdo específico para cada dia*/}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="favorites-section">
-        <h2>Favoritos</h2>
-        <ul className="favorites-list">
-          {events.map((event) => {
-            const [day, month, year] = event.date.split('/').map(Number);
-            const eventDate = new Date(year, month - 1, day);
+        <div className="favorites-section">
+          <h2>Favoritos</h2>
+          <ul className="favorites-list">
+            {events.map((event) => {
+              const [day, month, year] = event.date.split('/').map(Number);
+              const eventDate = new Date(year, month - 1, day);
 
-            return (
-              <li key={event.date} className={`favorite-item ${selectedDate === eventDate ? 'selected' : ''}`} onClick={() => handleDaySelect(eventDate)}>
-                <div className="event-date">
-                  {eventDate.getDate()}
-                  {' '}
-                  {['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'][eventDate.getMonth()]}
-                </div>
-                <div className="event-info">
-                  <h3>{event.title}</h3>
-                  <p>{event.description}</p>
-                </div>
-                <i className="fas fa-heart"></i>
-              </li>
-            );
-          })}
-        </ul>
+              return (
+                <li key={event.date} className={`favorite-item ${selectedDate === eventDate ? 'selected' : ''}`} onClick={() => handleDaySelect(eventDate)}>
+                  <div className="event-date">
+                    {eventDate.getDate()}
+                    {' '}
+                    {['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'][eventDate.getMonth()]}
+                  </div>
+                  <div className="event-info">
+                    <h3>{event.title}</h3>
+                    <p>{event.description}</p>
+                  </div>
+                  <i className="fas fa-heart"></i>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </div>
+
   );
 }
-
-export default Perfil;
