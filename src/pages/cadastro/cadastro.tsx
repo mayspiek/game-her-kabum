@@ -75,8 +75,13 @@ function Cadastro() {
             <img src={backgroundImage} className="background"/>
               <form className="form" onSubmit={handleSubmit}>
                 <img src={nomeLogo} alt="Logo" className="logo" />
+
+
+               <div className="container_titulo">
                 <h2 className="Titulo">Realize o seu cadastro</h2>
                 <p>Preencha os campos abaixo com os seus dados para criar sua conta</p>
+                </div>
+                
                 <div className="input-container">
                     <label htmlFor="role">Como você deseja acessar a plataforma?</label>
                     <div className="role-options">

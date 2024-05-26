@@ -1,7 +1,13 @@
 .logoContainer {
-    width: 80px;
-    height: 100%;
+    float: left; 
+    margin-right: 10px;
+    align-self: flex-start;
 }
+.Logopequena{
+    width: 55px;
+margin-top: 4px;
+}
+
 
 .navBar {
     display: flex;
