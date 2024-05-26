@@ -48,7 +48,7 @@ export function LoginPage() {
         return <Navigate to="/" />;
     }
     return (
-        <div className="container">
+        <div className="login-container">
             <div className="imageBg">
                 <img src={LoginBg} alt="" />
             </div>
