@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import NavBar from '../../components/navbar/NavBar'
 import { PublicType } from '../../models/Event'
-
+import './CadastroEvento.styles.css'
 export const CadastroEvento = () => {
     const [publico, setPublico] = useState<PublicType>();
 
@@ -10,7 +10,7 @@ export const CadastroEvento = () => {
     }
 
     return (
-        <div>
+        <div className='homeWrapper'>
             <NavBar />
             <h2>Cadastre seu evento</h2>
             <form>
@@ -24,7 +24,6 @@ export const CadastroEvento = () => {
                 </div>
                 <div className='form--label--item'>
                     <label htmlFor="">Qual o público o seu evento?</label>
-                    <input name='' type="text" />
                     <div className='publicOptions'>
                         <button className={publico === PublicType.GENERAL ? "btn-check" : "btn-button"} onClick={() => handlePublico(PublicType.GENERAL)}>Público Geral</button>
                         <button className={publico === PublicType.FEMALE ? "btn-check" : "btn-button"} onClick={() => handlePublico(PublicType.FEMALE)}>Público Feminino</button>
@@ -38,18 +37,7 @@ export const CadastroEvento = () => {
                     <label htmlFor="">Link de inscrição</label>
                     <input name='' type="text" />
                 </div>
-                <div className='form--label--item'>
-                    <label htmlFor="">Jogo</label>
-                    <input name='' type="text" />
-                </div>
-                <div className='form--label--item'>
-                    <label htmlFor="">Data</label>
-                    <input name='' type="text" />
-                </div>
-                <div className='form--label--item'>
-                    <label htmlFor="">Horário</label>
-                    <input name='' type="text" />
-                </div>
+                div.
                 <div className='form--label--item'>
                     <label htmlFor="">Informações adicionais</label>
                     <input name='' type="text" />
