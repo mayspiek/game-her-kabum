@@ -8,6 +8,7 @@ import { UserRegisterService } from "../../api/services/UserRegisterService";
 import { UserRegisterRepository } from "../../api/repositories/UserRegisterRepository";
 import backgroundImage from '../../assets/img/cadastro_tela.png';
 import nomeLogo from '../../assets/img/logo-compl.png';
+import NavBar from "../../components/navbar/NavBar";
 
 
 function Cadastro() {
@@ -66,8 +67,11 @@ function Cadastro() {
         console.log(role);
     };
 
-    return (
-        <div className="container">
+
+    return ( 
+        <div>
+            <NavBar/>
+         <div className= "container">
             <img src={backgroundImage} className="background"/>
               <form className="form" onSubmit={handleSubmit}>
                 <img src={nomeLogo} alt="Logo" className="logo" />
@@ -160,11 +164,8 @@ function Cadastro() {
                 <button type="submit" className="submit">
   Cadastrar
 </button>
-                
-                <Link to="/login">
-                    <button className="voltar">Voltar</button>
-                </Link>
             </form>
+        </div>
         </div>
     );
 }
