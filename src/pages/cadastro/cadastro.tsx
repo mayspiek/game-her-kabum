@@ -26,9 +26,9 @@ function Cadastro() {
         email: "",
         role: Role.ROLE_USER // valor padrão
     });
-    
 
-    const handleSubmit = (event : FormEvent<HTMLFormElement>) => {
+
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         if (password !== confirmPassword) {
@@ -36,7 +36,7 @@ function Cadastro() {
             return;
         }
 
-        try{
+        try {
             const useService = new UserRegisterService(new UserRegisterRepository(new AxiosHttpClient()));
 
             useService.register(user);
@@ -47,7 +47,7 @@ function Cadastro() {
         console.log({ email, password });
     };
 
-    const handleChanges = (event : FormEvent<HTMLInputElement>) => {
+    const handleChanges = (event: FormEvent<HTMLInputElement>) => {
         const { name, value } = event.currentTarget;
 
         setUser((prevUser) => ({
@@ -56,119 +56,119 @@ function Cadastro() {
         }));
     }
 
-    const handleSelectGender = (gender : Gender) => {
+    const handleSelectGender = (gender: Gender) => {
         setGender(gender);
         console.log(gender);
     };
-    const handleRole = (role : Role) => {
+    const handleRole = (role: Role) => {
         setRole(role);
         console.log(role);
     };
 
 
-    return ( 
+    return (
         <div>
-            <NavBar/>
-         <div className= "container">
-            <img src={backgroundImage} className="background"/>
-              <form className="form" onSubmit={handleSubmit}>
-                <img src={nomeLogo} alt="Logo" className="logo" />
+            <NavBar />
+            <div className="container">
+                <img src={backgroundImage} className="background" />
+                <form className="form" onSubmit={handleSubmit}>
+                    <img src={nomeLogo} alt="Logo" className="logo" />
 
 
-               <div className="container_titulo">
-                <h2 className="Titulo">Realize o seu cadastro</h2>
-                <p>Preencha os campos abaixo com os seus dados para criar sua conta</p>
-                </div>
-                
-                <div className="input-container">
-                    <label htmlFor="role">Como você deseja acessar a plataforma?</label>
-                    <div className="role-options">
-            
-
-                            <button className={ role === Role.ROLE_USER ? "btn-check" : "btn-button"}onClick={()=>handleRole(Role.ROLE_USER)}>Gamer</button>
-            
-                       
-                            
-                            <button className={ role === Role.ROLE_ORGANIZADOR ? "btn-check" : "btn-button"} onClick={()=>handleRole(Role.ROLE_ORGANIZADOR)}>Organizador</button>
-                       
+                    <div className="container_titulo">
+                        <h2 className="Titulo">Realize o seu cadastro</h2>
+                        <p>Preencha os campos abaixo com os seus dados para criar sua conta</p>
                     </div>
-                </div>
-                <div className="input-container">
-                    <label htmlFor="genero">Qual o seu gênero?</label>
-                    <div className="gender-options">
- 
-                            
-                    <button className={ gender === Gender.FEMININO ? "btn-check" : "btn-button"}onClick={()=>handleSelectGender(Gender.FEMININO)}>Feminino</button>
-                
-                            
-                    <button className={ gender === Gender.MASCULINO ? "btn-check" : "btn-button"}onClick={()=>handleSelectGender(Gender.MASCULINO)}>Masculino</button>
+
+                    <div className="input-container">
+                        <label htmlFor="role">Como você deseja acessar a plataforma?</label>
+                        <div className="role-options">
+
+
+                            <button className={role === Role.ROLE_USER ? "btn-check" : "btn-button"} onClick={() => handleRole(Role.ROLE_USER)}>Gamer</button>
+
+
+
+                            <button className={role === Role.ROLE_ORGANIZADOR ? "btn-check" : "btn-button"} onClick={() => handleRole(Role.ROLE_ORGANIZADOR)}>Organizador</button>
+
+                        </div>
                     </div>
-                </div>
-                <div className="input-container">
-                    <label htmlFor="nome">Nome</label>
-                    <input
-                        type="text"
-                        placeholder="Nome"
-                        required
-                        className="input"
-                        value={nome}
-                        onChange={handleChanges}
-                        name="name"
-                    />
-                </div>
-                <div className="input-container">
-                    <label htmlFor="nick">Username</label>
-                    <input
-                        type="text"
-                        placeholder="Nick"
-                        required
-                        className="input"
-                        value={nick}
-                        onChange={handleChanges}
-                        name="username"
-                    />
-                </div>
-                <div className="input-container">
-                    <label htmlFor="email">E-mail</label>
-                    <input
-                        type="email"
-                        placeholder="Email"
-                        required
-                        className="input"
-                        value={email}
-                        onChange={handleChanges}
-                        name="email"
-                    />
-                </div>
-                <div className="input-container">
-                    <label htmlFor="senha">Senha</label>
-                    <input
-                        type="password"
-                        placeholder="Senha"
-                        required
-                        className="input"
-                        value={password}
-                        onChange={handleChanges}
-                        name="password"
-                    />
-                </div>
-                <div className="input-container">
-                    <label htmlFor="confirmarSenha">Confirme a Senha</label>
-                    <input
-                        type="password"
-                        placeholder="Confirme a Senha"
-                        required
-                        className="input"
-                        value={confirmPassword}
-                        onChange={handleChanges}
-                        name="confirmPassword"
-                    />
-                </div>
-                <button type="submit" className="submit">
-  Cadastrar
-</button>
-            </form>
-        </div>
+                    <div className="input-container">
+                        <label htmlFor="genero">Qual o seu gênero?</label>
+                        <div className="gender-options">
+
+
+                            <button className={gender === Gender.FEMININO ? "btn-check" : "btn-button"} onClick={() => handleSelectGender(Gender.FEMININO)}>Feminino</button>
+
+
+                            <button className={gender === Gender.MASCULINO ? "btn-check" : "btn-button"} onClick={() => handleSelectGender(Gender.MASCULINO)}>Masculino</button>
+                        </div>
+                    </div>
+                    <div className="input-container">
+                        <label htmlFor="nome">Nome</label>
+                        <input
+                            type="text"
+                            placeholder="Nome"
+                            required
+                            className="input"
+                            value={nome}
+                            onChange={handleChanges}
+                            name="name"
+                        />
+                    </div>
+                    <div className="input-container">
+                        <label htmlFor="nick">Username</label>
+                        <input
+                            type="text"
+                            placeholder="Nick"
+                            required
+                            className="input"
+                            value={nick}
+                            onChange={handleChanges}
+                            name="username"
+                        />
+                    </div>
+                    <div className="input-container">
+                        <label htmlFor="email">E-mail</label>
+                        <input
+                            type="email"
+                            placeholder="Email"
+                            required
+                            className="input"
+                            value={email}
+                            onChange={handleChanges}
+                            name="email"
+                        />
+                    </div>
+                    <div className="input-container">
+                        <label htmlFor="senha">Senha</label>
+                        <input
+                            type="password"
+                            placeholder="Senha"
+                            required
+                            className="input"
+                            value={password}
+                            onChange={handleChanges}
+                            name="password"
+                        />
+                    </div>
+                    <div className="input-container">
+                        <label htmlFor="confirmarSenha">Confirme a Senha</label>
+                        <input
+                            type="password"
+                            placeholder="Confirme a Senha"
+                            required
+                            className="input"
+                            value={confirmPassword}
+                            onChange={handleChanges}
+                            name="confirmPassword"
+                        />
+                    </div>
+                    <button type="submit" className="submit">
+                        Cadastrar
+                    </button>
+                </form>
+            </div>
         </div>
     );
 }

@@ -2,7 +2,9 @@
     background-color: var(--purple-normal);
     border-radius: var(--border-radius);
     width: 100%;
+    color: var(--white);
     padding: .75rem 1.875rem;
+    font-weight: 600;
 
     margin: 0 auto;
 
@@ -11,10 +13,4 @@
 
 .globalButton:hover{
     background-color: var(--purple-normal-hover);
-}
-
-.globalButton a {
-    color: var(--white);
-    position: relative;
-    font-weight: 600;
 }
