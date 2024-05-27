@@ -23,6 +23,9 @@ export default function NavBar() {
                     <li>
                         <a className="nav--item" href="/eventos">Eventos</a>
                     </li>
+                    <li>
+                        <a className="nav--item" href="/sobre">Sobre</a>
+                    </li>
                     {isLogged ? <>
                         <li>
                             <a className="nav--item" href="/perfil">Perfil</a>

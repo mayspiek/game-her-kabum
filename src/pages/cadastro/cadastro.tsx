@@ -8,15 +8,10 @@ import { UserRegisterRepository } from "../../api/repositories/UserRegisterRepos
 import backgroundImage from '../../assets/img/cadastro_tela.png';
 import nomeLogo from '../../assets/img/logo-compl.png';
 import NavBar from "../../components/navbar/NavBar";
+import { useNavigate } from "react-router-dom";
 
 function Cadastro() {
-    const [password, setPassword] = useState("");
-    const [email, setEmail] = useState("");
-    const [nome, setNome] = useState("");
-    const [nick, setNick] = useState("");
-    const [gender, setGender] = useState<Gender>(Gender.FEMININO);
-    const [role, setRole] = useState<Role>(Role.ROLE_USER);
-    const [confirmPassword, setConfirmPassword] = useState("");
+    const navigate = useNavigate();
     const [user, setUser] = useState<User>({
         name: "",
         username: "",
@@ -26,24 +21,30 @@ function Cadastro() {
         role: Role.ROLE_USER // valor padrão
     });
 
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = event.target;
+        setUser((prevUser) => ({
+            ...prevUser,
+            [name]: value
+        }));
+    };
 
-    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-
-        if (password !== confirmPassword) {
-            alert("As senhas não coincidem");
-            return;
-        }
-
+        
         try {
             const useService = new UserRegisterService(new UserRegisterRepository(new AxiosHttpClient()));
+            const response = await useService.register(user);
 
-            useService.register(user);
+            if (response.statusCode === 200) {
+                alert("Usuário cadastrado com sucesso!");
+                event.currentTarget.reset();
+                navigate('/');
+            }
+            
         } catch (error) {
             console.log(error);
         }
-
-        console.log({ email, password });
     };
 
     const handleChanges = (event: FormEvent<HTMLInputElement>) => {
@@ -56,11 +57,11 @@ function Cadastro() {
     }
 
     const handleSelectGender = (gender: Gender) => {
-        setGender(gender);
+        setUser({...user, gender});
         console.log(gender);
     };
     const handleRole = (role: Role) => {
-        setRole(role);
+        setUser({...user, role});
         console.log(role);
     };
 
@@ -86,11 +87,11 @@ function Cadastro() {
                         <div className="role-options">
 
 
-                            <button className={role === Role.ROLE_USER ? "btn-check" : "btn-button"} onClick={() => handleRole(Role.ROLE_USER)}>Gamer</button>
+                            <button className={user.role === Role.ROLE_USER ? "btn-check" : "btn-button"} onClick={() => handleRole(Role.ROLE_USER)}>Gamer</button>
 
 
 
-                            <button className={role === Role.ROLE_ORGANIZADOR ? "btn-check" : "btn-button"} onClick={() => handleRole(Role.ROLE_ORGANIZADOR)}>Organizador</button>
+                            <button className={user.role === Role.ROLE_ORGANIZADOR ? "btn-check" : "btn-button"} onClick={() => handleRole(Role.ROLE_ORGANIZADOR)}>Organizador</button>
 
                         </div>
                     </div>
@@ -99,10 +100,10 @@ function Cadastro() {
                         <div className="gender-options">
 
 
-                            <button className={gender === Gender.FEMININO ? "btn-check" : "btn-button"} onClick={() => handleSelectGender(Gender.FEMININO)}>Feminino</button>
+                            <button className={user.gender === Gender.FEMININO ? "btn-check" : "btn-button"} onClick={() => handleSelectGender(Gender.FEMININO)}>FEMININO</button>
 
 
-                            <button className={gender === Gender.MASCULINO ? "btn-check" : "btn-button"} onClick={() => handleSelectGender(Gender.MASCULINO)}>Masculino</button>
+                            <button className={user.gender === Gender.MASCULINO ? "btn-check" : "btn-button"} onClick={() => handleSelectGender(Gender.MASCULINO)}>MASCULINO</button>
                         </div>
                     </div>
                     <div className="input-container">
@@ -112,8 +113,8 @@ function Cadastro() {
                             placeholder="Nome"
                             required
                             className="input"
-                            value={nome}
-                            onChange={handleChanges}
+                            value={user.name as string} // Fix: Change 'String' to 'string'
+                            onChange={handleInputChange}
                             name="name"
                         />
                     </div>
@@ -121,11 +122,11 @@ function Cadastro() {
                         <label htmlFor="nick">Username</label>
                         <input
                             type="text"
-                            placeholder="Nick"
+                            placeholder="Username"
                             required
                             className="input"
-                            value={nick}
-                            onChange={handleChanges}
+                            value={user.username as string} // Fix: Change 'String' to 'string'
+                            onChange={handleInputChange}
                             name="username"
                         />
                     </div>
@@ -136,8 +137,8 @@ function Cadastro() {
                             placeholder="Email"
                             required
                             className="input"
-                            value={email}
-                            onChange={handleChanges}
+                            value={user.email as string} // Fix: Change 'String' to 'string'
+                            onChange={handleInputChange}
                             name="email"
                         />
                     </div>
@@ -148,21 +149,9 @@ function Cadastro() {
                             placeholder="Senha"
                             required
                             className="input"
-                            value={password}
-                            onChange={handleChanges}
+                            value={user.password as string} // Fix: Change 'String' to 'string'
+                            onChange={handleInputChange}
                             name="password"
-                        />
-                    </div>
-                    <div className="input-container">
-                        <label htmlFor="confirmarSenha">Confirme a Senha</label>
-                        <input
-                            type="password"
-                            placeholder="Confirme a Senha"
-                            required
-                            className="input"
-                            value={confirmPassword}
-                            onChange={handleChanges}
-                            name="confirmPassword"
                         />
                     </div>
                     <button type="submit" className="submit">

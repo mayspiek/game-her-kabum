@@ -5,8 +5,8 @@ export enum Role {
   }
   
   export enum Gender {
-    MASCULINO = "masculino",
-    FEMININO = "feminino",
+    MASCULINO = "MASCULINO",
+    FEMININO = "FEMININO",
   }
 
 export interface UserLogin {
@@ -22,6 +22,5 @@ export interface User {
     gender: Gender,
     email: String,
     card?: String,
-    cpf?: String,
     role?: Role
 }

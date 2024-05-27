@@ -1,13 +1,14 @@
 import React from 'react';
-import './styles.css';
-import Navbar from './components/navbar';
+import './sobre.styles.css';
+import NavBar from '../../components/navbar/NavBar';
 
-function App() {
+// src/components/navbar/NavBar.tsx
+export function Sobre() {
   return (
     <div className="container">
       <div className="header">
         <img src="/logo-gameher.png" alt="Game.Her Logo" className="logo" />
-        <Navbar />
+        <NavBar />
         <div className="nav">
           <a href="#">Início</a>
           <a href="#">Sobre</a>
@@ -76,5 +77,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
