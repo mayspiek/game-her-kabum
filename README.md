@@ -37,6 +37,8 @@ Promoção da visibilidade do cenário competitivo feminino nos jogos online, co
 Centralização das informações sobre os eventos femininos;
 Oferta de oportunidades para patrocinadores e organizadores se conectarem com um público engajado para expandir o cenário gamer.
 
+## Disponível em:
+http://159.203.106.163:3000/
 
 ### Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [react.js](https://react.dev/) (versão 4.9.x ou superior)
