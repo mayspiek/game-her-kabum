@@ -49,7 +49,7 @@ http://159.203.106.163:3000/
 1. Clone o repositório:
 ```bash
    git clone https://github.com/mayspiek/game-her-kabum.git
-   cd game-her
+   cd game-her-kabum
 ```
 
 2. Instale as dependências:
